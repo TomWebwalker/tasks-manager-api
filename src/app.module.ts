@@ -6,7 +6,7 @@ import { MongooseModule } from '@nestjs/mongoose';
   imports: [
     EmployeeModule,
     MongooseModule.forRoot(
-      'mongodb+srv://admin:YXYX7j0kMwWXn9dD@cluster0.t8tddmf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
+      process.env.DB_CONNECTION || 'mongodb://localhost/nest'
     ),
   ],
 })
